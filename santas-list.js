@@ -1,3 +1,5 @@
+const Email = require('./email')
+
 function getRandomInt(min, max) {
   return min + Math.floor(Math.random() * (max - min));
 }
@@ -10,7 +12,7 @@ function isValid(key, testValue, invalid) {
   return !(invalid[key] || []).includes(testValue)
 }
 
-function randomizeList(list) {
+function randomizeList(list, invalid) {
   let randomList = [...list]
   for (var i = 0; i < randomList.length; i++) {
     let randomInt = getRandomInt(i, randomList.length)
@@ -33,8 +35,17 @@ function main() {
     haig: ['taline', 'ani']
   }
 
-  console.log(randomizeList(list))
+  var mailOptions = {
+    from: 'thesssak@gmail.com',
+    to: 'thesssak+butt@gmail.com',
+    subject: 'export test',
+    text: 'export test'
+  };
+
+  // console.log(randomizeList(list, invalid))
   // console.log(isValid(null, null, invalid));
+
+  // Email.sendEmail(mailOptions)
 }
 
 main()
