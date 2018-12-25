@@ -25,27 +25,6 @@ function randomizeList(list, invalid) {
   return randomList
 }
 
-function main() {
-  const list = ['shant', 'katrina', 'sanan', 'sako', 'arek', 'vrej', 'ani', 'haig', 'taline']
-
-  const invalid = {
-    shant: ['katrina'],
-    katrina: ['shant'],
-    sehrope: ['arek'],
-    haig: ['taline', 'ani']
-  }
-
-  var mailOptions = {
-    from: 'thesssak@gmail.com',
-    to: 'thesssak+butt@gmail.com',
-    subject: 'export test',
-    text: 'export test'
-  };
-
-  // console.log(randomizeList(list, invalid))
-  // console.log(isValid(null, null, invalid));
-
-  // Email.sendEmail(mailOptions)
+module.exports = {
+  randomizeList
 }
-
-main()
