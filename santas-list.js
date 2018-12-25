@@ -9,3 +9,16 @@ function moveItem(list, newIndex, oldIndex) {
 function isValid(key, testValue, invalid) {
   return !(invalid[key] || []).includes(testValue)
 }
+
+function randomizeList(list) {
+  let randomList = [...list]
+  for (var i = 0; i < randomList.length; i++) {
+    let randomInt = getRandomInt(i, randomList.length)
+    if(isValid(randomList[(i-1) % randomList.length], randomList[randomInt], invalid)) {
+      moveItem(randomList, i, randomInt)
+    } else {
+      i -= 1
+    }
+  }
+  return randomList
+}
