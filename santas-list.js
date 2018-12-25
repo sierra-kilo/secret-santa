@@ -22,3 +22,19 @@ function randomizeList(list) {
   }
   return randomList
 }
+
+function main() {
+  const list = ['shant', 'katrina', 'sanan', 'sako', 'arek', 'vrej', 'ani', 'haig', 'taline']
+
+  const invalid = {
+    shant: ['katrina'],
+    katrina: ['shant'],
+    sehrope: ['arek'],
+    haig: ['taline', 'ani']
+  }
+
+  console.log(randomizeList(list))
+  // console.log(isValid(null, null, invalid));
+}
+
+main()
